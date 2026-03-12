@@ -132,8 +132,8 @@ public class AdventurePage {
             String adventureName=adventureToSelect.getText().trim();
 
             if(adventureName.equalsIgnoreCase(adventure)){
-
                 adventureToSelect.click();
+                break;
             }
 
 

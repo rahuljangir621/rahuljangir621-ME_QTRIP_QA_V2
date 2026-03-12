@@ -1,18 +1,21 @@
 package qtriptest.tests;
 
 import qtriptest.DP;
-
+import qtriptest.DriverSingleton;
 import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
+import org.apache.commons.collections4.iterators.SingletonIterator;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -33,24 +36,42 @@ public class testCase_01 {
     @BeforeClass
     public void config() throws MalformedURLException {
 
-        final DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName(BrowserType.CHROME);
-        driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
+        driver = DriverSingleton.getDriver();
+        DriverSingleton.openApp("https://qtrip-qa-web.labs.crio.do/");
+    
+    
 
-        driver.manage().window().maximize();
-        System.out.println("createDriver()");
+        // final DesiredCapabilities capabilities = new DesiredCapabilities();
+        // capabilities.setBrowserName(BrowserType.CHROME);
+        // driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
 
-        //using DriverSingleton we can initialize the drive
+        // driver.manage().window().maximize();
+        // System.out.println("createDriver()");
+
+        // using DriverSingleton we can initialize the drive
    
-        // driver= DriverSingleton.getDriver("chrome");
-
-        driver.get("https://qtrip-qa-web.labs.crio.do/");
-      
-
+        // driver= DriverSingleton.getDriver();
 
         homepage = new HomePage(driver);
         registerpage = new RegisterPage(driver);
         loginpage = new LoginPage(driver, registerpage);
+
+        //  sa = new SoftAssert();
+       
+
+      
+
+        // logger("Step 1: Check visibility of register button on home page");
+
+        // sa.assertTrue(homepage.isRegisterButtonVisible(), "Register button not found");
+
+        // logger("Step 2: Navigate to the register page");
+        
+        // homepage.navigateToRegisterPage();
+
+        // logger("Step 3: Verify registration page is displayed");
+        // sa.assertTrue(registerpage.isRegisterPageNavigationSucceded(),
+        //         " register page navigation failed");
 
         
     }
@@ -69,6 +90,7 @@ public class testCase_01 {
         sa.assertTrue(homepage.isRegisterButtonVisible(), "Register button not found");
 
         logger("Step 2: Navigate to the register page");
+        
         homepage.navigateToRegisterPage();
 
         logger("Step 3: Verify registration page is displayed");
@@ -99,27 +121,17 @@ public class testCase_01 {
     }
     
     @DataProvider(name= "userDataForTestCase01")
-    public Object[][] userDataForTestCase01() throws IOException {
-        try{
-        DP dataProvider = new DP();
-        Object[][] data = dataProvider.dpMethod("TestCase01");
-        // System.out.println("DataProvider rows: " + data.length);
-        return data;
-        //  return new Object[][] { {"demoUser", "demoPass"} };
-        }catch (Exception e){
-            System.out.println("err"+e);
-            return null;
+    public Object[][] userDataForTestCase01() {
+        try {
+            DP dataProvider = new DP();
+            return dataProvider.dpMethod("TestCase01");
+        } catch (Exception e) {
+            System.out.println("Error in DataProvider: " + e.getMessage());
+            return new Object[][] {}; 
         }
     }
-    
-
-    @AfterClass
-    public void closeTest() {
-
-        driver.quit();
-        pause(2000);
-    }
-
-
-
+    @AfterMethod
+    public void teardown() {
+    DriverSingleton.unloadDriver(); 
+}
 }
