@@ -15,6 +15,7 @@ import java.util.UUID;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -23,7 +24,7 @@ import static qtriptest.utils.SeleniumUtils.*;
 
 public class testCase_04 {
 
-    static RemoteWebDriver driver;
+    RemoteWebDriver driver;
     HomePage homepage;
     RegisterPage registerpage;
     LoginPage loginpage;
@@ -31,10 +32,12 @@ public class testCase_04 {
     AdventureDetailsPage adventureDetailsPage;
     HistoryPage   historyPage;
     SoftAssert sa;
+    String passwrd = "Rahu@123";
+    String username = "s@email.com";
 
+    @BeforeClass
+    public void config() throws MalformedURLException {
 
-    @BeforeTest(alwaysRun = true)
-    public void BeforeTest() throws MalformedURLException {
         driver = DriverSingleton.getDriver();
         DriverSingleton.openApp("https://qtrip-qa-web.labs.crio.do/");
 
@@ -44,19 +47,9 @@ public class testCase_04 {
         adventurePage = new AdventurePage(driver);
         adventureDetailsPage = new AdventureDetailsPage(driver);
         historyPage = new HistoryPage(driver);
-
-    }
-
-    public static void logStatus(String type, String message, String status) {
-
         
-      
-
-        System.out.println(String.format("%s |  %s  |  %s | %s", String.valueOf(java.time.LocalDateTime.now()), type,
-                message, status));
-
     }
-
+  
     @Test(dataProvider = "userDataForTestCase04", dataProviderClass = testCase_04.class,groups = "verfiy booking with diffrent data sets", enabled = true, priority = 4,description = "booking and verifying multiple reservations")
     public void TestCase04(String NewUserName, String Password, String dataset1, String dataset2,String dataset3) throws InterruptedException {
         sa = new SoftAssert();

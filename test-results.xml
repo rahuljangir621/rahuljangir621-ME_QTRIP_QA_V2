@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="9" failed="3" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-12T15:46:10 IST" name="Gradle suite" finished-at="2026-03-12T15:49:03 IST" duration-ms="173247">
+  <suite started-at="2026-03-12T16:06:47 IST" name="Gradle suite" finished-at="2026-03-12T16:11:33 IST" duration-ms="286223">
     <groups>
       <group name="verify home search">
-        <method signature="testCase_02.TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@659499f1]" name="TestCase02" class="qtriptest.tests.testCase_02"/>
+        <method signature="testCase_02.TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@71a8adcf]" name="TestCase02" class="qtriptest.tests.testCase_02"/>
       </group> <!-- verify home search -->
-      <group name="booking a ride">
-        <method signature="testCase_03.TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@51e69659]" name="TestCase03" class="qtriptest.tests.testCase_03"/>
-      </group> <!-- booking a ride -->
+      <group name="booking a rides">
+        <method signature="testCase_03.TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@27462a88]" name="TestCase03" class="qtriptest.tests.testCase_03"/>
+      </group> <!-- booking a rides -->
       <group name="verfiy booking with diffrent data sets">
-        <method signature="testCase_04.TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@4f2b503c]" name="TestCase04" class="qtriptest.tests.testCase_04"/>
+        <method signature="testCase_04.TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@7bab3f1a]" name="TestCase04" class="qtriptest.tests.testCase_04"/>
       </group> <!-- verfiy booking with diffrent data sets -->
       <group name="Login Flow">
-        <method signature="testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@82de64a]" name="TestCase01" class="qtriptest.tests.testCase_01"/>
+        <method signature="testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@49049a04]" name="TestCase01" class="qtriptest.tests.testCase_01"/>
       </group> <!-- Login Flow -->
     </groups>
-    <test started-at="2026-03-12T15:46:10 IST" name="Gradle test" finished-at="2026-03-12T15:49:03 IST" duration-ms="173247">
+    <test started-at="2026-03-12T16:06:47 IST" name="Gradle test" finished-at="2026-03-12T16:11:33 IST" duration-ms="286223">
       <class name="qtriptest.tests.testCase_01">
-        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@82de64a]" started-at="2026-03-12T15:46:13 IST" name="config" finished-at="2026-03-12T15:46:13 IST" duration-ms="322" status="PASS">
+        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@49049a04]" started-at="2026-03-12T16:06:47 IST" name="config" finished-at="2026-03-12T16:06:50 IST" duration-ms="2968" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@82de64a]" started-at="2026-03-12T15:46:16 IST" name="TestCase01" description="UserOnBoardFlow" data-provider="userDataForTestCase01" finished-at="2026-03-12T15:46:24 IST" duration-ms="8583" status="PASS">
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@49049a04]" started-at="2026-03-12T16:06:53 IST" name="TestCase01" description="UserOnBoardFlow" data-provider="userDataForTestCase01" finished-at="2026-03-12T16:07:01 IST" duration-ms="8262" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,11 +39,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_01@82de64a]" started-at="2026-03-12T15:46:24 IST" name="teardown" finished-at="2026-03-12T15:46:24 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_01@49049a04]" started-at="2026-03-12T16:07:01 IST" name="teardown" finished-at="2026-03-12T16:07:01 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@82de64a]" started-at="2026-03-12T15:46:24 IST" name="TestCase01" description="UserOnBoardFlow" data-provider="userDataForTestCase01" finished-at="2026-03-12T15:46:32 IST" duration-ms="8058" status="PASS">
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@49049a04]" started-at="2026-03-12T16:07:01 IST" name="TestCase01" description="UserOnBoardFlow" data-provider="userDataForTestCase01" finished-at="2026-03-12T16:07:09 IST" duration-ms="7996" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -59,11 +59,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_01@82de64a]" started-at="2026-03-12T15:46:32 IST" name="teardown" finished-at="2026-03-12T15:46:32 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_01@49049a04]" started-at="2026-03-12T16:07:09 IST" name="teardown" finished-at="2026-03-12T16:07:09 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@82de64a]" started-at="2026-03-12T15:46:32 IST" name="TestCase01" description="UserOnBoardFlow" data-provider="userDataForTestCase01" finished-at="2026-03-12T15:46:40 IST" duration-ms="7754" status="PASS">
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@49049a04]" started-at="2026-03-12T16:07:09 IST" name="TestCase01" description="UserOnBoardFlow" data-provider="userDataForTestCase01" finished-at="2026-03-12T16:07:17 IST" duration-ms="7782" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -79,17 +79,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_01@82de64a]" started-at="2026-03-12T15:46:40 IST" name="teardown" finished-at="2026-03-12T15:46:40 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_01@49049a04]" started-at="2026-03-12T16:07:17 IST" name="teardown" finished-at="2026-03-12T16:07:17 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- qtriptest.tests.testCase_01 -->
       <class name="qtriptest.tests.testCase_04">
-        <test-method is-config="true" signature="BeforeTest()[pri:0, instance:qtriptest.tests.testCase_04@4f2b503c]" started-at="2026-03-12T15:46:10 IST" name="BeforeTest" finished-at="2026-03-12T15:46:12 IST" duration-ms="2645" status="PASS">
+        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_04@7bab3f1a]" started-at="2026-03-12T16:09:44 IST" name="config" finished-at="2026-03-12T16:09:51 IST" duration-ms="7304" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BeforeTest -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@4f2b503c]" started-at="2026-03-12T15:49:03 IST" name="TestCase04" description="booking and verifying multiple reservations" data-provider="userDataForTestCase04" finished-at="2026-03-12T15:49:03 IST" duration-ms="145" status="FAIL">
+        </test-method> <!-- config -->
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@7bab3f1a]" started-at="2026-03-12T16:09:51 IST" name="TestCase04" description="booking and verifying multiple reservations" data-provider="userDataForTestCase04" finished-at="2026-03-12T16:10:26 IST" duration-ms="34738" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -117,99 +117,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Session [09edaa220a259aa17d8b85557dd1b34c] was terminated due to ORPHAN
-Build info: version: '4.0.0-alpha-1', revision: 'd1d3728cae', time: '2019-04-24T13:42:21'
-System info: host: 'rahuljangir621', ip: '192.168.62.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-1023-aws', java.version: '11.0.19'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.rylWns}, goog:chromeOptions: {debuggerAddress: localhost:43695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 09edaa220a259aa17d8b85557dd...}
-Session ID: 09edaa220a259aa17d8b85557dd1b34c
-*** Element info: {Using=xpath, value=//a[text()='Register']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Session [09edaa220a259aa17d8b85557dd1b34c] was terminated due to ORPHAN
-Build info: version: '4.0.0-alpha-1', revision: 'd1d3728cae', time: '2019-04-24T13:42:21'
-System info: host: 'rahuljangir621', ip: '192.168.62.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-1023-aws', java.version: '11.0.19'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.rylWns}, goog:chromeOptions: {debuggerAddress: localhost:43695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 09edaa220a259aa17d8b85557dd...}
-Session ID: 09edaa220a259aa17d8b85557dd1b34c
-*** Element info: {Using=xpath, value=//a[text()='Register']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:190)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:124)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:577)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:328)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:446)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:320)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at com.sun.proxy.$Proxy16.getText(Unknown Source)
-at qtriptest.pages.HomePage.isRegisterButtonVisible(HomePage.java:46)
-at qtriptest.tests.testCase_04.TestCase04(testCase_04.java:69)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:806)
-at org.testng.TestRunner.run(TestRunner.java:601)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:146)
-at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:91)
-at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-at com.sun.proxy.$Proxy2.stop(Unknown Source)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@4f2b503c]" started-at="2026-03-12T15:49:03 IST" name="TestCase04" description="booking and verifying multiple reservations" data-provider="userDataForTestCase04" finished-at="2026-03-12T15:49:03 IST" duration-ms="63" status="FAIL">
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@7bab3f1a]" started-at="2026-03-12T16:10:26 IST" name="TestCase04" description="booking and verifying multiple reservations" data-provider="userDataForTestCase04" finished-at="2026-03-12T16:10:59 IST" duration-ms="33356" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -237,99 +148,10 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Session [09edaa220a259aa17d8b85557dd1b34c] was terminated due to ORPHAN
-Build info: version: '4.0.0-alpha-1', revision: 'd1d3728cae', time: '2019-04-24T13:42:21'
-System info: host: 'rahuljangir621', ip: '192.168.62.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-1023-aws', java.version: '11.0.19'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.rylWns}, goog:chromeOptions: {debuggerAddress: localhost:43695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 09edaa220a259aa17d8b85557dd...}
-Session ID: 09edaa220a259aa17d8b85557dd1b34c
-*** Element info: {Using=xpath, value=//a[text()='Register']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Session [09edaa220a259aa17d8b85557dd1b34c] was terminated due to ORPHAN
-Build info: version: '4.0.0-alpha-1', revision: 'd1d3728cae', time: '2019-04-24T13:42:21'
-System info: host: 'rahuljangir621', ip: '192.168.62.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-1023-aws', java.version: '11.0.19'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.rylWns}, goog:chromeOptions: {debuggerAddress: localhost:43695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 09edaa220a259aa17d8b85557dd...}
-Session ID: 09edaa220a259aa17d8b85557dd1b34c
-*** Element info: {Using=xpath, value=//a[text()='Register']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:190)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:124)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:577)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:328)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:446)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:320)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at com.sun.proxy.$Proxy16.getText(Unknown Source)
-at qtriptest.pages.HomePage.isRegisterButtonVisible(HomePage.java:46)
-at qtriptest.tests.testCase_04.TestCase04(testCase_04.java:69)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:806)
-at org.testng.TestRunner.run(TestRunner.java:601)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:146)
-at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:91)
-at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-at com.sun.proxy.$Proxy2.stop(Unknown Source)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@4f2b503c]" started-at="2026-03-12T15:49:03 IST" name="TestCase04" description="booking and verifying multiple reservations" data-provider="userDataForTestCase04" finished-at="2026-03-12T15:49:03 IST" duration-ms="38" status="FAIL">
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@7bab3f1a]" started-at="2026-03-12T16:10:59 IST" name="TestCase04" description="booking and verifying multiple reservations" data-provider="userDataForTestCase04" finished-at="2026-03-12T16:11:33 IST" duration-ms="33832" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -357,109 +179,20 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Session [09edaa220a259aa17d8b85557dd1b34c] was terminated due to ORPHAN
-Build info: version: '4.0.0-alpha-1', revision: 'd1d3728cae', time: '2019-04-24T13:42:21'
-System info: host: 'rahuljangir621', ip: '192.168.62.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-1023-aws', java.version: '11.0.19'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.rylWns}, goog:chromeOptions: {debuggerAddress: localhost:43695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 09edaa220a259aa17d8b85557dd...}
-Session ID: 09edaa220a259aa17d8b85557dd1b34c
-*** Element info: {Using=xpath, value=//a[text()='Register']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Session [09edaa220a259aa17d8b85557dd1b34c] was terminated due to ORPHAN
-Build info: version: '4.0.0-alpha-1', revision: 'd1d3728cae', time: '2019-04-24T13:42:21'
-System info: host: 'rahuljangir621', ip: '192.168.62.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-1023-aws', java.version: '11.0.19'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.rylWns}, goog:chromeOptions: {debuggerAddress: localhost:43695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 09edaa220a259aa17d8b85557dd...}
-Session ID: 09edaa220a259aa17d8b85557dd1b34c
-*** Element info: {Using=xpath, value=//a[text()='Register']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:190)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:124)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:577)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:328)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:446)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:320)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at com.sun.proxy.$Proxy16.getText(Unknown Source)
-at qtriptest.pages.HomePage.isRegisterButtonVisible(HomePage.java:46)
-at qtriptest.tests.testCase_04.TestCase04(testCase_04.java:69)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:806)
-at org.testng.TestRunner.run(TestRunner.java:601)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:146)
-at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:91)
-at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-at com.sun.proxy.$Proxy2.stop(Unknown Source)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_04@4f2b503c]" started-at="2026-03-12T15:49:03 IST" name="teardown" finished-at="2026-03-12T15:49:03 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_04@7bab3f1a]" started-at="2026-03-12T16:11:33 IST" name="teardown" finished-at="2026-03-12T16:11:33 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- qtriptest.tests.testCase_04 -->
       <class name="qtriptest.tests.testCase_03">
-        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_03@51e69659]" started-at="2026-03-12T15:47:15 IST" name="config" finished-at="2026-03-12T15:47:17 IST" duration-ms="1468" status="PASS">
+        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_03@27462a88]" started-at="2026-03-12T16:07:50 IST" name="config" finished-at="2026-03-12T16:07:57 IST" duration-ms="7337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@51e69659]" started-at="2026-03-12T15:47:17 IST" name="TestCase03" description="UserOnBoardFlow" data-provider="userDataForTestCase03" finished-at="2026-03-12T15:47:53 IST" duration-ms="35687" status="PASS">
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@27462a88]" started-at="2026-03-12T16:07:58 IST" name="TestCase03" description="UserOnBoardFlow" data-provider="userDataForTestCase03" finished-at="2026-03-12T16:08:33 IST" duration-ms="35502" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -500,7 +233,7 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@51e69659]" started-at="2026-03-12T15:47:53 IST" name="TestCase03" description="UserOnBoardFlow" data-provider="userDataForTestCase03" finished-at="2026-03-12T15:48:28 IST" duration-ms="34994" status="PASS">
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@27462a88]" started-at="2026-03-12T16:08:33 IST" name="TestCase03" description="UserOnBoardFlow" data-provider="userDataForTestCase03" finished-at="2026-03-12T16:09:08 IST" duration-ms="35149" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -541,7 +274,7 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@51e69659]" started-at="2026-03-12T15:48:28 IST" name="TestCase03" description="UserOnBoardFlow" data-provider="userDataForTestCase03" finished-at="2026-03-12T15:49:03 IST" duration-ms="34683" status="PASS">
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_03@27462a88]" started-at="2026-03-12T16:09:08 IST" name="TestCase03" description="UserOnBoardFlow" data-provider="userDataForTestCase03" finished-at="2026-03-12T16:09:43 IST" duration-ms="35260" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -582,17 +315,17 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_03@51e69659]" started-at="2026-03-12T15:49:03 IST" name="teardown" finished-at="2026-03-12T15:49:03 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_03@27462a88]" started-at="2026-03-12T16:09:43 IST" name="teardown" finished-at="2026-03-12T16:09:44 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- qtriptest.tests.testCase_03 -->
       <class name="qtriptest.tests.testCase_02">
-        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_02@659499f1]" started-at="2026-03-12T15:46:40 IST" name="config" finished-at="2026-03-12T15:46:49 IST" duration-ms="8988" status="PASS">
+        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_02@71a8adcf]" started-at="2026-03-12T16:07:17 IST" name="config" finished-at="2026-03-12T16:07:24 IST" duration-ms="7754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@659499f1]" started-at="2026-03-12T15:46:50 IST" name="TestCase02" description="UserOnBoardFlow" data-provider="userDataForTestCase02" finished-at="2026-03-12T15:46:59 IST" duration-ms="9410" status="PASS">
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@71a8adcf]" started-at="2026-03-12T16:07:25 IST" name="TestCase02" description="UserOnBoardFlow" data-provider="userDataForTestCase02" finished-at="2026-03-12T16:07:33 IST" duration-ms="8674" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -623,7 +356,7 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@659499f1]" started-at="2026-03-12T15:46:59 IST" name="TestCase02" description="UserOnBoardFlow" data-provider="userDataForTestCase02" finished-at="2026-03-12T15:47:07 IST" duration-ms="8423" status="PASS">
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@71a8adcf]" started-at="2026-03-12T16:07:33 IST" name="TestCase02" description="UserOnBoardFlow" data-provider="userDataForTestCase02" finished-at="2026-03-12T16:07:42 IST" duration-ms="8449" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -654,7 +387,7 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@659499f1]" started-at="2026-03-12T15:47:07 IST" name="TestCase02" description="UserOnBoardFlow" data-provider="userDataForTestCase02" finished-at="2026-03-12T15:47:15 IST" duration-ms="8155" status="PASS">
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_02@71a8adcf]" started-at="2026-03-12T16:07:42 IST" name="TestCase02" description="UserOnBoardFlow" data-provider="userDataForTestCase02" finished-at="2026-03-12T16:07:50 IST" duration-ms="8175" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -685,7 +418,7 @@ at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerM
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_02@659499f1]" started-at="2026-03-12T15:47:15 IST" name="teardown" finished-at="2026-03-12T15:47:15 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:qtriptest.tests.testCase_02@71a8adcf]" started-at="2026-03-12T16:07:50 IST" name="teardown" finished-at="2026-03-12T16:07:50 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

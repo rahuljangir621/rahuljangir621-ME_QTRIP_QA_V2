@@ -51,7 +51,7 @@ public class testCase_03 {
         
     }
   
-    @Test(description = "UserOnBoardFlow", dataProvider = "userDataForTestCase03",groups = "booking a ride", dataProviderClass = testCase_03.class,priority = 1,enabled=true)
+    @Test(description = "UserOnBoardFlow", dataProvider = "userDataForTestCase03",groups = "booking a rides", dataProviderClass = testCase_03.class,priority = 1,enabled=true)
     public void TestCase03(String userName, String password,String search_items,String adventure,String gustname,String date,String count) {
     sa = new SoftAssert();
        
