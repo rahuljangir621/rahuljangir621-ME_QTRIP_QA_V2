@@ -31,7 +31,7 @@ public class testCase_01 extends BaseTest {
             logPass("✅ WebDriver initialized successfully for testCase_01.");
         } catch (Exception e) {
             qtriptest.ExtendTestManager.logfail("❌ Failed to initialize driver: " + e.getMessage());
-            throw new RuntimeException("Driver initialization failed: " + e.getMessage());
+              throw new RuntimeException("Driver initialization failed: " + e.getMessage());
         }
     }
 
