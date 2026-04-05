@@ -63,9 +63,14 @@ public class testCase_01 extends BaseTest {
            
               ExtendTestManager.logInfo("STEP 6️⃣: Logging in with registered user credentials");
             loginPage.performLogin(uniqueEmail, password,false);
-            softAssert.assertTrue(uniqueEmail.contains(uniqueEmail), "Email mismatch");
-            softAssert.assertTrue(password.equals(password), "Password mismatch");
-         
+          
+            
+           softAssert.assertTrue(uniqueEmail.toLowerCase().contains(email.toLowerCase().split("@")[0]),
+          "Email mismatch: expected base " + email + " but got " + uniqueEmail);
+
+        
+           softAssert.assertEquals(password, password, "Password mismatch");
+
 
          
             Assert.assertTrue(homePage.isLogOutButtonVisible(), "Login failed — Logout button not visible");
