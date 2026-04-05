@@ -20,6 +20,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
         String browser = "chrome";
         String APP_URL = "https://qtrip-qa-web.labs.crio.do/";
     
+
+        
         @BeforeSuite(alwaysRun = true)
         public void initTestSuite() throws Exception {
             driver = DriverSingleton.getDriver(browser);
