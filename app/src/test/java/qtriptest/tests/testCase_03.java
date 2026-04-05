@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class testCase_03 extends BaseTest {
+public class testCase_03 extends BaseTest  {
 
     RegisterPage registerPage;
     LoginPage loginPage;
