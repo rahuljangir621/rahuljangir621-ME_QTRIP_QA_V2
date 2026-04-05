@@ -12,7 +12,8 @@ public class RegisterPage {
 
     RemoteWebDriver driver;
     private static final String Page_endPoint="/pages/register/";
-    protected String dynamicUser;
+    protected static String dynamicUser;
+
 
     public RegisterPage(RemoteWebDriver driver){
 
@@ -45,14 +46,10 @@ public class RegisterPage {
     }
 
 
-    public void onBOardNewUser(String email, String password, String confirmPassword, boolean isUserDynamic){
+    public void onBOardNewUser(String email, String password, String confirmPassword){
 
         logger("Registering a new user with "+ email);
 
-        if(isUserDynamic){
-            email=String.format("komal_%s@email.com",UUID.randomUUID());
-            this.dynamicUser=email;
-        }
         enterText(userEmailTextBox, email);
         enterText(passwordTextBox, password);
         enterText(confirmPasswordTextBox, confirmPassword);

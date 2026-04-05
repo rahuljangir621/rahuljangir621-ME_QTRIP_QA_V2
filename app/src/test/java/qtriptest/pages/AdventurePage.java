@@ -1,4 +1,3 @@
-
 package qtriptest.pages;
 
 import org.openqa.selenium.By;
@@ -8,9 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import static qtriptest.utils.SeleniumUtils.*;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class AdventurePage {
 
@@ -97,6 +98,7 @@ public class AdventurePage {
             int actualDuration=Integer.parseInt(actualDurationOnActivity);
 
             if(actualDuration>=lowerDuration && actualDuration<=higherDuration){
+                activity.click();
                 return isDurationInRange=true;
             }
 
@@ -123,23 +125,32 @@ public class AdventurePage {
         clickOnElement(hourclearButton);
 
     }
+    public boolean verfiy_navigate_to_currect_city(String city_name){
 
-    public void selectAdventure(String adventure){
-
-        for(WebElement specificAdventure: AdventureactivityCardList){
-
-            WebElement adventureToSelect=specificAdventure.findElement(By.xpath("//h5[normalize-space()='"+adventure+"']"));
-            String adventureName=adventureToSelect.getText().trim();
-
-            if(adventureName.equalsIgnoreCase(adventure)){
-                adventureToSelect.click();
-                break;
-            }
+     String current_url = driver.getCurrentUrl();
+        
+     return current_url.endsWith(city_name.toLowerCase());
 
 
-        }
     }
 
+    public void selectAdventure(String adventure) {
+        for (WebElement specificAdventure : AdventureactivityCardList) {
+            try {
+                WebElement adventureToSelect = specificAdventure.findElement(
+                    By.tagName("h5")
+                );
+                String adventureName = adventureToSelect.getText().trim();
+    
+                if (adventureName.equalsIgnoreCase(adventure)) {
+                    adventureToSelect.click();
+                    break; // stop after clicking the first match
+                }
+            } catch (NoSuchElementException e) {
+            
+            }
+        }
+    }
     public void bookAdventure(String[] dataset) throws InterruptedException{
 
         String city=dataset[0];
@@ -151,7 +162,7 @@ public class AdventurePage {
         homepage.searchCityResult(city);
         homepage.selectSearchCityAndNavigate();
 
-        logger("Step 5: Select adventure from adventure drop down");
+        logPass("Step 5: Select adventure from adventure drop down");
 
         adventurePage.selectAdventureFilter(adventure);
 
@@ -168,23 +179,12 @@ public class AdventurePage {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
 }
+
+
+
+
+
+
+
+

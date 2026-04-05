@@ -1,36 +1,79 @@
 package qtriptest;
 
-import java.net.MalformedURLException;
 import java.net.URL;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
+/**
+ * 
+ * Lightweight driver factory that will:
+ *  - create RemoteWebDriver with retries
+ *  - allow re-creation when quit
+ *  - use system property "remote.url" if provided; otherwise fallback to localhost:8082
+ */
 public class DriverSingleton {
+    private static RemoteWebDriver driver = null;
 
-    private static final String HUB_URL = "http://localhost:8082/wd/hub"; // ✅ set your Selenium Grid hub URL
+    // Configure via -Dremote.url=http://host:port/wd/hub
+    private static final String DEFAULT_GRID_URL = "http://localhost:8082/wd/hub";
 
-    private static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
-
-    private DriverSingleton (){}
-
-    public static RemoteWebDriver getDriver() throws MalformedURLException {
-        if (driver.get() == null) {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-gpu");
-            driver.set(new RemoteWebDriver(new URL(HUB_URL), options));
-            driver.get().manage().window().maximize();
-            driver.get().manage().deleteAllCookies();
+    public synchronized static RemoteWebDriver getDriver(String browser) {
+        if (driver == null) {
+            driver = createRemoteDriverWithRetry(3);
         }
-        return driver.get();
-    }
-    
-    public static void unloadDriver() {
-        driver.remove();
+        return driver;
     }
 
-    public static void openApp(String url) {
-        driver.get().get(url);
+    public synchronized static RemoteWebDriver createRemoteDriverWithRetry(int maxAttempts) {
+        int attempts = 0;
+        Exception lastEx = null;
+        String gridUrl = System.getProperty("remote.url", DEFAULT_GRID_URL);
+
+        while (attempts < maxAttempts) {
+            try {
+                ChromeOptions options = new ChromeOptions();
+                // safe flags for headless remote execution
+                // use headless new where supported
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
+                options.addArguments("--remote-allow-origins=*");
+
+                RemoteWebDriver tmp = new RemoteWebDriver(new URL(gridUrl), options);
+                tmp.manage().timeouts().implicitlyWait(0, java.util.concurrent.TimeUnit.SECONDS); // prefer explicit waits
+                return tmp;
+            } catch (Exception e) {
+                lastEx = e;
+                attempts++;
+                System.out.println("DriverSingleton: failed to create driver (attempt " + attempts + "). Retrying in 5s...");
+                try { Thread.sleep(5000); } catch (InterruptedException ie) { /* ignore */ }
+            }
+        }
+        throw new RuntimeException("DriverSingleton: could not create RemoteWebDriver after " + maxAttempts + " attempts", lastEx);
+    }
+
+    public synchronized static void quitDriver() {
+        try {
+            if (driver != null) {
+                driver.quit();
+            }
+        } catch (Exception e) {
+            System.out.println("DriverSingleton: error while quitting driver: " + e.getMessage());
+        } finally {
+            driver = null;
+        }
+    }
+
+    /**
+     * Force create new driver (quit existing then create)
+     */
+    public synchronized static RemoteWebDriver recreateDriver() {
+        quitDriver();
+        driver = createRemoteDriverWithRetry(3);
+        return driver;
     }
 }

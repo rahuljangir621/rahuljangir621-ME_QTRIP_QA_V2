@@ -1,110 +1,110 @@
 package qtriptest.tests;
 
-import qtriptest.DP;
-import qtriptest.DriverSingleton;
-import qtriptest.pages.AdventurePage;
-import qtriptest.pages.HomePage;
-import qtriptest.pages.LoginPage;
-import qtriptest.pages.RegisterPage;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-import org.testng.annotations.Test.*;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
-import static qtriptest.utils.SeleniumUtils.*;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import qtriptest.DP;
+import qtriptest.pages.HomePage;
+import qtriptest.pages.AdventurePage;
+import qtriptest.utils.SeleniumUtils;
+import qtriptest.ExtendTestManager;
+import qtriptest.ExtendReportManager;
 
-public class testCase_02 {
 
-    RemoteWebDriver driver;
-    HomePage homepage;
-    RegisterPage registerpage;
-    LoginPage loginpage;
+public class testCase_02 extends BaseTest {
+
+    HomePage homePage;
     AdventurePage adventurePage;
-    SoftAssert sa;
-    String passwrd = "Rahu@123";
-    String username = "s@email.com";
+    SoftAssert softAssert;
+    boolean status;
 
-    @BeforeClass
-    public void config() throws MalformedURLException {
-        // 1. Get the driver instance and assign it to your local 'driver' variable
-        driver = DriverSingleton.getDriver();
-        
-        // 2. SAFETY CHECK: If driver is still null here, the test will fail immediately with a clear message
-    
-        // 3. Now perform setup
-        DriverSingleton.openApp("https://qtrip-qa-web.labs.crio.do/");
-        
-        // 4. Initialize page objects with the active driver
-        homepage = new HomePage(driver);
-        registerpage = new RegisterPage(driver);
-        loginpage = new LoginPage(driver, registerpage);
+     @BeforeMethod(alwaysRun = true)
+    public void setup() {
+        driver = BaseTest.driver; // ✅ Use shared driver from BaseTest
+        homePage = new HomePage(driver);
         adventurePage = new AdventurePage(driver);
-    }    
- 
-  
-    @Test(description = "UserOnBoardFlow", dataProvider = "userDataForTestCase02", dataProviderClass = testCase_02.class,priority = 1,groups={"verify home search"},enabled=true)
-
-    public void TestCase02(String search_items,String categoryValue,String hourValue,String expectedFilterResult ,String unexpectedFilterResult) {
-        sa = new SoftAssert();
-        logger("navigate to qtrip home page");
-        homepage.navigateToHomePage();
-        logger("verify that if search valid city");
-        homepage.searchCityResult(search_items);
-        logger("verify that if search valid place suggestion should show");
-        sa.assertTrue(homepage.searchCityResult(search_items).contains(search_items), " if search valid place suggestion not showing");
-    
-        logger("clicking on suggestion city");
-        homepage.selectSearchCityAndNavigate();
-
-        logger("selecting  Category Filters page");
-        adventurePage.selectCategoryFilters(categoryValue);
-
-        logger("selecting hours on filter page");
-        adventurePage.selectHourFilters(hourValue.trim());
-    
-      
-        System.out.println(adventurePage.countOfAdventureImages(expectedFilterResult));
-        sa.assertTrue(adventurePage.countOfAdventureImages(expectedFilterResult), "expected result of places counts not match");
-        logger("clear Category AND Hours Category Filters page");
-        adventurePage.clearCategoryButton();
-        adventurePage.clearHoursButton();
-       
-        System.out.println(adventurePage.countOfAdventureImages(unexpectedFilterResult));
-
-        sa.assertTrue(adventurePage.countOfAdventureImages(unexpectedFilterResult), "expected result of places counts not match");
-
-
-        sa.assertAll();
+        softAssert = new SoftAssert();
+        SeleniumUtils.logPass("✅ Navigated to QTrip Home Page for TestCase02");
+        ExtendTestManager.logInfo("✅ Navigated to QTrip Home Page for TestCase02");
     }
-    
-    @DataProvider(name= "userDataForTestCase02")
-    public Object[][] userDataForTestCase02() throws IOException {
-        try{
-        DP dataProvider = new DP();
-        Object[][] data = dataProvider.dpMethod("TestCase02");
-        return data;
-        }catch (Exception e){
-            System.out.println("err"+e);
-            return null;
+
+    @Test(
+        priority = 2,
+        description = "Verify search and filter functionalities on Adventure page",
+        groups = { "Search and Filter Flow" },
+        dataProvider = "dpMethod",
+        dataProviderClass = DP.class,
+        enabled = true
+    )
+    public void TestCase02(
+            String cityName,
+            String categoryFilter,
+            String durationFilter,
+            String expectedFilteredResults,
+            String expectedUnfilteredResults
+    ) {
+        try {
+            ExtendTestManager.logInfo("STEP 1️⃣: Verify Home Page is loaded");
+            softAssert.assertTrue(homePage.isRegisterButtonVisible(), "Home Page not loaded properly");
+
+            ExtendTestManager.logInfo("STEP 2️⃣: Search for invalid city");
+            String invalidResult = homePage.searchCityResult("RandomCityXYZ");
+
+            status = invalidResult.contains("No City found");
+            System.out.println(status);
+            
+            softAssert.assertTrue(status, "No match message not shown");
+
+            ExtendTestManager.logInfo("STEP 3️⃣: Search for valid city and verify autocomplete");
+            String validResult = homePage.searchCityResult(cityName);
+            System.out.println(status);
+            softAssert.assertTrue(status, "Autocomplete didn’t show valid city");
+
+
+            ExtendTestManager.logInfo("STEP 4️⃣: Navigate to city");
+            homePage.selectSearchCityAndNavigate();
+         
+            ExtendTestManager.logInfo("STEP 5️⃣: Verify unfiltered activity count");
+            status =  adventurePage.countOfAdventureImages(expectedUnfilteredResults);
+            softAssert.assertTrue(
+               status,
+                "Unfiltered count mismatch for " + cityName
+            );
+            System.out.println(status);
+
+           
+            ExtendTestManager.logInfo("STEP 7️⃣: Apply Category Filter: " + categoryFilter);
+            adventurePage.selectCategoryFilters(categoryFilter);
+          
+             ExtendTestManager.logInfo("STEP 6️⃣: Apply Duration Filter: " + durationFilter);
+             adventurePage.selectHourFilters(durationFilter);
+
+             status = adventurePage.countOfAdventureImages(expectedFilteredResults);
+             System.out.println(status);
+             softAssert.assertTrue(
+                 status,
+                 "Filtered result count mismatch"
+             );
+
+            ExtendTestManager.logInfo("STEP 8️⃣: Clear Filters and verify all records restored");
+            adventurePage.clearHoursButton();
+            adventurePage.clearCategoryButton();
+            status = adventurePage.countOfAdventureImages(expectedUnfilteredResults);
+            System.out.println(status);
+            softAssert.assertTrue(
+                status,
+                "Filtered result count mismatch"
+            );
+            driver.navigate().back();
+           
+            ExtendTestManager.logPass("✅ TestCase02_SearchAndFilterFlow passed successfully");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ExtendTestManager.logfail("❌ TestCase02 failed due to exception: " + e.getMessage());
+            softAssert.fail("❌ TestCase02 failed due to exception: " + e.getMessage());
+        } finally {
+            softAssert.assertAll();
         }
     }
-    
-
-    @AfterClass
-    public void teardown() {
-        DriverSingleton.unloadDriver(); 
-    }
-
-   
-
-
-    }
-
+}

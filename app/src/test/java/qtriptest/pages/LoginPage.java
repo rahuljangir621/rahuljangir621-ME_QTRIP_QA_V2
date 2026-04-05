@@ -37,7 +37,7 @@ public class LoginPage {
 
     public boolean isLoginPageNavigationSucceded(){
 
-        logger("Check for login page navigation");
+        logPass("Check for login page navigation");
         return 
         checkPageTransition(driver,Page_endPoint,loginFormTitle,"Login");
           
@@ -50,7 +50,7 @@ public class LoginPage {
 
     public void performLogin(String email, String password, boolean isUserDynamic){
 
-        logger("Login with user "+ email);
+        logPass("Login with user "+ email);
         if(isUserDynamic){
             email=this.registerpage.dynamicUser;
         }

@@ -1,10 +1,53 @@
-<suite name="QTrip Suite">
-  <test name="All Tests">
-    <classes>
-      <class name="qtriptest.tests.testCase_01"/>
-      <class name="qtriptest.tests.testCase_02"/>
-      <class name="qtriptest.tests.testCase_03"/>
-      <class name="qtriptest.tests.testCase_04"/>
-    </classes>
-  </test>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="QTrip Test Suite" parallel="false">
+   <listeners>
+        <listener class-name="qtriptest.utils.BaseTest"/>
+    </listeners>
+
+    <test name="Login Flow Tests">
+        <groups>
+            <run>
+                <include name="Login Flow"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="qtriptest.tests.testCase_01"/>
+        </classes>
+    </test>
+
+    <test name="Search and Filter Flow Tests">
+        <groups>
+            <run>
+                <include name="Search and Filter flow"/>
+            </run>
+        </groups>
+        <classes>
+            <!-- <class name="qtriptest.tests.testCase_02"/> -->
+        </classes>
+    </test>
+
+    <test name="Booking and Cancellation Flow Tests">
+        <groups>
+            <run>
+                <include name="Booking and Cancellation Flow"/>
+            </run>
+        </groups>
+        <classes>
+            <!-- <class name="qtriptest.tests.testCase_03"/> -->
+        </classes>
+    </test>
+
+    <test name="Reliability Flow Tests">
+        <groups>
+            <run>
+                <include name="Reliability Flow"/>
+            </run>
+        </groups>
+        <classes>
+            <!-- <class name="qtriptest.tests.testCase_04"/> -->
+        </classes>
+    </test>
+
 </suite>

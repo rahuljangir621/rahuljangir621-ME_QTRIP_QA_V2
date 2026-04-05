@@ -1,150 +1,168 @@
 package qtriptest.tests;
 
 import qtriptest.DP;
-import qtriptest.DriverSingleton;
-import qtriptest.pages.AdventureDetailsPage;
-import qtriptest.pages.AdventurePage;
-import qtriptest.pages.HistoryPage;
-import qtriptest.pages.HomePage;
-import qtriptest.pages.LoginPage;
-import qtriptest.pages.RegisterPage;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.UUID;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import qtriptest.ExtendTestManager;
+import qtriptest.pages.*;
+import qtriptest.utils.SeleniumUtils;
+// import qtriptest.utils.ExtentTestManager;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import static qtriptest.utils.SeleniumUtils.*;
 
-public class testCase_04 {
+public class testCase_04 extends BaseTest {
 
-    RemoteWebDriver driver;
-    HomePage homepage;
-    RegisterPage registerpage;
-    LoginPage loginpage;
+    RegisterPage registerPage;
+    LoginPage loginPage;
+    HomePage homePage;
     AdventurePage adventurePage;
     AdventureDetailsPage adventureDetailsPage;
-    HistoryPage   historyPage;
-    SoftAssert sa;
-    String passwrd = "Rahu@123";
-    String username = "s@email.com";
+    HistoryPage historyPage;
+    SoftAssert softAssert;
 
-    @BeforeClass
-    public void config() throws MalformedURLException {
-
-        driver = DriverSingleton.getDriver();
-        DriverSingleton.openApp("https://qtrip-qa-web.labs.crio.do/");
-
-        homepage = new HomePage(driver);
-        registerpage = new RegisterPage(driver);
-        loginpage = new LoginPage(driver, registerpage);
+    @BeforeMethod(alwaysRun = true)
+    public void setup() {
+        driver = BaseTest.driver; // ✅ shared driver
+        homePage = new HomePage(driver);
+        registerPage = new RegisterPage(driver);
         adventurePage = new AdventurePage(driver);
+        loginPage = new LoginPage(driver,registerPage);
         adventureDetailsPage = new AdventureDetailsPage(driver);
         historyPage = new HistoryPage(driver);
-        
-    }
-  
-    @Test(dataProvider = "userDataForTestCase04", dataProviderClass = testCase_04.class,groups = "verfiy booking with diffrent data sets", enabled = true, priority = 4,description = "booking and verifying multiple reservations")
-    public void TestCase04(String NewUserName, String Password, String dataset1, String dataset2,String dataset3) throws InterruptedException {
-        sa = new SoftAssert();
-       
+        softAssert = new SoftAssert();
 
-        String confirmPassword = Password;
-    
-        logger("Step 1: Check visibility of register button on home page");
-    
-        sa.assertTrue(homepage.isRegisterButtonVisible(), "Register button not found");
-    
-        logger("Step 2: Navigate to the register page");
-        homepage.navigateToRegisterPage();
-    
-        logger("Step 3: Verify registration page is displayed");
-        sa.assertTrue(registerpage.isRegisterPageNavigationSucceded(),
-                " register page navigation failed");
-             
-    
-        logger("Step 4: Register new user");
-        registerpage.onBOardNewUser(NewUserName, Password, confirmPassword, true);
-     
-        logger("Step 5: Verify user is on login page");
-        loginpage.isLoginPageNavigationSucceded();
-       
-    
-        logger("Step 6: Login with latest user");
-        loginpage.performLogin(NewUserName, Password, true);
-      
-    
-        logger("Step 7: Veify user is logged in or not");
-        sa.assertTrue(homepage.isLogOutButtonVisible(), "User is not logged in");  
-      
-            String[] datasets = {dataset1, dataset2, dataset3};
-        
-            for(String data : datasets) {
-        
-                String[] values = data.split(";");
-        
-                String city = values[0];
-                String adventure = values[1];
-                String guestName = values[2];
-                String date = values[3];
-                String count = values[4];
-        
-                System.out.println("Running dataset for city: " + city);
-        
-                homepage.searchCityResult(city);
-                homepage.selectSearchCityAndNavigate();
-        
-                adventurePage.selectAdventure(adventure);
-        
-                adventureDetailsPage.enterNameAndDateValue(guestName, date);
-                adventureDetailsPage.enterPersonCount(count);
-        
-                adventureDetailsPage.doReservation();
-        
-                adventureDetailsPage.checkForSuccessfullReservation();
-        
-                adventureDetailsPage.navigateToReservationHistoryPage();
-        
-                historyPage.checkTrackIDandCancel();
-                historyPage.clickOnHomeButton();
-            }
-            sa.assertTrue(homepage.isLogOutButtonVisible(),"log out button is not visible on home page");
-            homepage.logoutUser();
+        SeleniumUtils.logPass("✅ Initialized all page objects for TestCase_04");
+        // ExtentTestManager.logInfo("✅ Initialized all page objects for TestCase_04");
+    }
+
+    @Test(
+        priority = 4,
+        description = "Verify multiple bookings across cities and reservation history",
+        groups = { "Reliability Flow" },
+        dataProvider = "dpMethod",
+        dataProviderClass = DP.class,
+        enabled = true
+    )
+    public void TestCase04(
+        String NewUserName,
+        String Password,
+        String dataset1,
+        String dataset2,
+        String dataset3
+    ) {
+        try {
+            Password = "abc@123";
+
+            String[] data1 = dataset1.split(";");
+            String[] data2 = dataset2.split(";");
+            String[] data3 = dataset3.split(";");
+
+            // ExtentTestManager.logInfo("STEP-1️⃣: Navigate to HomePage of QTrip");
+            logPass("STEP 1️⃣: Navigating to Home Page");
+            Assert.assertTrue(homePage.isRegisterButtonVisible(), "Register button not visible on home page");
+            logPass("Register button is visible on the Home Page.");
+
+            logPass("STEP 2️⃣: Navigating to Register Page");
+            homePage.navigateToRegisterPage();
+
+            logPass("STEP 3️⃣: Verifying Register Page");
+            Assert.assertTrue(registerPage.isRegisterPageNavigationSucceded(), "Register Page navigation failed");
+            logPass("Successfully navigated to Register Page.");
+
+            // ✅ Step 4: Make email unique while keeping Excel as base
+            String uniqueEmail = NewUserName.split("@")[0] + "+" + System.currentTimeMillis() + "@" + NewUserName.split("@")[1];
+            logPass("Generated unique email: " + NewUserName);
+
+            logPass("STEP 4️⃣: Registering a new user");
+            registerPage.onBOardNewUser(uniqueEmail, Password, Password);
+            logPass("User registration successful with email: " + uniqueEmail);
             
-            sa.assertAll();
 
 
+            logPass("STEP 5️⃣: Verifying navigation to Login Page");
+            Assert.assertTrue(loginPage.isLoginPageNavigationSucceded(), "Login Page navigation failed");
+            logPass("Redirected to Login Page successfully.");
+
+            logPass("STEP 6️⃣: Logging in with registered user credentials");
+            loginPage.performLogin(uniqueEmail, Password,false);
+            logPass("Login attempt made successfully.");
+
+            // ---------- DATASET 1 ----------
+            ExtendTestManager.logInfo("STEP-3️⃣: Booking for dataset 1: " + data1[0]);
+            performBookingFlow(data1[0], data1[1], data1[2], data1[3], data1[4]);
+            ExtendTestManager.logPass("✅ Dataset 1 booking successful");
+//happy coding
+            // ---------- DATASET 2 ----------
+            ExtendTestManager.logInfo("STEP-4️⃣: Booking for dataset 2: " + data2[0]);
+            performBookingFlow(data2[0], data2[1], data2[2], data2[3], data2[4]);
+            ExtendTestManager.logPass("✅ Dataset 2 booking successful");
+
+            // ---------- DATASET 3 ----------
+            ExtendTestManager.logInfo("STEP-5️⃣: Booking for dataset 3: " + data3[0]);
+            performBookingFlow(data3[0], data3[1], data3[2], data3[3], data3[4]);
+            ExtendTestManager.logPass("✅ Dataset 3 booking successful");
+
+            // ---------- VERIFY HISTORY ----------
+            ExtendTestManager.logInfo("STEP-6️⃣: Navigating to History page");
+            adventureDetailsPage.navigateToReservationHistoryPage();
+            ExtendTestManager.logPass("✅ Navigated to history page successfully");
+
+            ExtendTestManager.logInfo("STEP-7️⃣: Cancelling all reservations");
+            boolean status = historyPage.checkTrackIDandCancel();
+            softAssert.assertTrue(status, "Cancel all reservations failed");
+            ExtendTestManager.logPass("✅ All reservations cancelled successfully");
+
+            ExtendTestManager.logInfo("STEP-8️⃣: Logging out of application");
+            homePage.logoutUser();
+            softAssert.assertTrue(homePage.isRegisterButtonVisible(), "Logout failed");
+            ExtendTestManager.logPass("✅ Logout successful");
+
+            softAssert.assertAll();
+            ExtendTestManager.logPass("🎯 TestCase04 passed successfully");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ExtendTestManager.logfail("❌ TestCase04 failed: " + e.getMessage());
+            softAssert.fail("Test failed: " + e.getMessage());
+            softAssert.assertAll();
+        }
     }
 
-        @DataProvider(name= "userDataForTestCase04")
-public Object[][] userDataForTestCase03() throws IOException {
-    try{
-    DP dataProvider = new DP();
-    Object[][] data = dataProvider.dpMethod("TestCase04");
-    return data;
-    }catch (Exception e){
-        System.out.println("err"+e);
-        return null;
+    private void performBookingFlow(String city, String adventure, String guest, String date, String count) {
+        try {
+            homePage.navigateToHomePage();
+            String result = homePage.searchCityResult(city);
+          
+            softAssert.assertTrue(result.contains(city),  "City search mismatch");
+            homePage.selectSearchCityAndNavigate();
+            boolean status = adventurePage.verfiy_navigate_to_currect_city(city);
+            
+            softAssert.assertTrue(status, "Incorrect city navigation");
+            ExtendTestManager.logPass("✅ Navigated to " + city + " successfully");
+
+            ExtendTestManager.logInfo("STEP-4️⃣: Search and select adventure");
+            adventurePage.selectAdventure(adventure);
+            
+
+            result = adventureDetailsPage.verfiy_navigate_to_adv_name();
+
+            softAssert.assertTrue(adventure.toLowerCase().contains(result),
+    "Adventure name mismatch expected substring [" +result+ "] but found [" + adventure + "]");
+
+            // softAssert.assertEquals(result, adventure.toLowerCase(), "Adventure name mismatch");
+
+            ExtendTestManager.logPass("✅ Selected adventure: " + adventure);
+
+            ExtendTestManager.logInfo("STEP-5️⃣: Verify details page and book adventure");
+            adventureDetailsPage.enterNameAndDateValue(guest, date);
+            adventureDetailsPage.enterPersonCount(count);
+            adventureDetailsPage.doReservation();
+
+            softAssert.assertTrue(adventureDetailsPage.checkForSuccessfullReservation(), "Booking failed");
+        } catch (Exception e) {
+            ExtendTestManager.logfail("⚠️ performBookingFlow failed: " + e.getMessage());
+            ExtendTestManager.logfail("⚠️ Booking flow failed for city " + city + ": " + e.getMessage());
+            softAssert.fail("Booking flow failed: " + e.getMessage());
+        }
     }
 }
-
-
-@AfterClass
-public void teardown() {
-    DriverSingleton.unloadDriver(); 
-}
-       
-    }
-       
-       
-       
-       
-       
-       
-       

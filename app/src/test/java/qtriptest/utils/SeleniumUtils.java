@@ -74,11 +74,18 @@ public class SeleniumUtils {
         }
 
 
-        public static void logger(String log){
+        public static String logPass(String log){
             long timestamp = System.currentTimeMillis();
             String logMessage = String.format("INFO:: %s :: %s",timestamp, log);
-            System.out.println(logMessage);
-        }
-    
+            return logMessage;
+           
+        
+
 }    
+public static String logger(String log){
+   long timestamp = System.currentTimeMillis();
+   String logMessage = String.format("INFO:: %s :: %s",timestamp, log);
+   return logMessage;
+}
+}
 

@@ -2,58 +2,84 @@ package qtriptest;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
 
 public class DP {
-    // TODO: use correct annotation to connect the Data Provider with your Test Cases
-    
-    public Object[][] dpMethod(String sheetName) throws IOException {
-        int rowIndex = 0;
-        int cellIndex = 0;
-        List<List> outputList = new ArrayList<List>();
 
-        InputStream excelFile = getClass().getClassLoader() .getResourceAsStream("DatasetsforQTrip.xlsx"); if (excelFile == null) { throw new FileNotFoundException("DatasetsforQTrip.xlsx not found in resources"); }
+    @DataProvider(name = "dpMethod")
+    public Object[][] dpMethod(Method m) throws IOException {
+        List<List<String>> outputList = new ArrayList<>();
+
+        String filePath = System.getProperty("user.dir") + "/src/test/resources/DatasetsforQTrip.xlsx";
+        FileInputStream excelFile = new FileInputStream(new File(filePath));
         Workbook workbook = new XSSFWorkbook(excelFile);
-        Sheet selectedSheet = workbook.getSheet(sheetName);
-        Iterator<Row> iterator = selectedSheet.iterator();
-        while (iterator.hasNext()) {
-            Row nextRow = iterator.next();
-            Iterator<Cell> cellIterator = nextRow.cellIterator();
-            List<String> innerList = new ArrayList<String>();
-            while (cellIterator.hasNext()) {
-                Cell cell = cellIterator.next();
-                if (rowIndex > 0 && cellIndex > 0) {
-                    if (cell.getCellType() == CellType.STRING) {
-                        innerList.add(cell.getStringCellValue());
-                    } else if (cell.getCellType() == CellType.NUMERIC) {
-                        innerList.add(String.valueOf(cell.getNumericCellValue()));
-                    }
-                }
-                cellIndex = cellIndex + 1;
-            }
-            rowIndex = rowIndex + 1;
-            cellIndex = 0;
-            if (innerList.size() > 0)
-                outputList.add(innerList);
 
+        // Map method name to sheet name. E.g., TestCase01_UserOnboardingFlow -> TestCase01
+        String methodName = m.getName();
+        String sheetName = methodName.contains("_") ? methodName.split("_")[0] : methodName;
+
+        Sheet selectedSheet = workbook.getSheet(sheetName);
+        if (selectedSheet == null) {
+            workbook.close();
+            excelFile.close();
+            throw new RuntimeException("DP.dpMethod: sheet not found for test method. Expected sheet: " + sheetName + " in file: " + filePath);
         }
 
+        System.out.println("Reading sheet: " + sheetName);
+
+        Iterator<Row> iterator = selectedSheet.iterator();
+        int rowIndex = 0;
+        while (iterator.hasNext()) {
+            Row nextRow = iterator.next();
+            // skip header row
+            if (rowIndex == 0) {
+                rowIndex++;
+                continue;
+            }
+            List<String> innerList = new ArrayList<>();
+            // start from column 1 (skip serial col if present)
+            for (int c = 1; c < nextRow.getLastCellNum(); c++) {
+                Cell cell = nextRow.getCell(c, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+                String val;
+                if (cell.getCellType() == CellType.STRING) {
+                    val = cell.getStringCellValue();
+                } else if (cell.getCellType() == CellType.NUMERIC) {
+                    double d = cell.getNumericCellValue();
+                    if (d == (long) d) {
+                        val = String.valueOf((long) d);
+                    } else {
+                        val = String.valueOf(d);
+                    }
+                } else if (cell.getCellType() == CellType.BOOLEAN) {
+                    val = String.valueOf(cell.getBooleanCellValue());
+                } else {
+                    val = cell.toString();
+                }
+                innerList.add(val.trim());
+            }
+            if (!innerList.isEmpty()) {
+                outputList.add(innerList);
+            }
+            rowIndex++;
+        }
+
+        workbook.close();
         excelFile.close();
 
-        String[][] stringArray = outputList.stream().map(u -> u.toArray(new String[0])).toArray(String[][]::new);
-        return stringArray;
+        System.out.println("Data loaded for " + m.getName() + ": " + outputList);
 
+        Object[][] data = new Object[outputList.size()][];
+        for (int i = 0; i < outputList.size(); i++) {
+            data[i] = outputList.get(i).toArray(new Object[0]);
+        }
+        return data;
     }
 }

@@ -44,6 +44,11 @@ public class AdventureDetailsPage {
     @FindBy(xpath = "//a[text()='Reservations']")
     private WebElement reservationButton;
 
+    @FindBy (id="adventure-name")
+    private WebElement adventure_name;
+    
+
+
     public void enterNameAndDateValue(String name, String date){
 
         enterText(bookingNameTextBox, name);
@@ -51,6 +56,12 @@ public class AdventureDetailsPage {
 
     }
 
+    public String verfiy_navigate_to_adv_name(){
+        System.out.println(adventure_name.getText());
+
+       return adventure_name.getText().toLowerCase();
+
+    }
     public boolean checkReservationCalc(String count){
 
         peopleCountTextBox.clear();

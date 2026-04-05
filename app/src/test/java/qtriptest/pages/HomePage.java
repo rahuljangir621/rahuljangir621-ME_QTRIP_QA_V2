@@ -1,4 +1,3 @@
-
 package qtriptest.pages;
 
 import org.openqa.selenium.WebElement;

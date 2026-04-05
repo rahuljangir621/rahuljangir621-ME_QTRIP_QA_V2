@@ -1,137 +1,87 @@
 package qtriptest.tests;
 
-import qtriptest.DP;
-import qtriptest.DriverSingleton;
-import qtriptest.pages.HomePage;
-import qtriptest.pages.LoginPage;
-import qtriptest.pages.RegisterPage;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-import org.apache.commons.collections4.iterators.SingletonIterator;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.annotations.Test.*;
 import org.testng.asserts.SoftAssert;
+import qtriptest.DP;
+import qtriptest.pages.HomePage;
+import qtriptest.pages.RegisterPage;
+import qtriptest.pages.LoginPage;
 import static qtriptest.utils.SeleniumUtils.*;
+import qtriptest.ExtendTestManager;
+import qtriptest.ExtendReportManager;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class testCase_01 {
+public class testCase_01 extends BaseTest {
 
-    RemoteWebDriver driver;
-    HomePage homepage;
-    RegisterPage registerpage;
-    LoginPage loginpage;
-    SoftAssert sa;
-    String passwrd = "Rahu@123";
-    String username = "s@email.com";
+    HomePage homePage;
+    RegisterPage registerPage;
+    LoginPage loginPage;
+    SoftAssert softAssert;
 
-    @BeforeClass
-    public void config() throws MalformedURLException {
-
-        driver = DriverSingleton.getDriver();
-        DriverSingleton.openApp("https://qtrip-qa-web.labs.crio.do/");
-    
-    
-
-        // final DesiredCapabilities capabilities = new DesiredCapabilities();
-        // capabilities.setBrowserName(BrowserType.CHROME);
-        // driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
-
-        // driver.manage().window().maximize();
-        // System.out.println("createDriver()");
-
-        // using DriverSingleton we can initialize the drive
-   
-        // driver= DriverSingleton.getDriver();
-
-        homepage = new HomePage(driver);
-        registerpage = new RegisterPage(driver);
-        loginpage = new LoginPage(driver, registerpage);
-
-        //  sa = new SoftAssert();
-       
-
-      
-
-        // logger("Step 1: Check visibility of register button on home page");
-
-        // sa.assertTrue(homepage.isRegisterButtonVisible(), "Register button not found");
-
-        // logger("Step 2: Navigate to the register page");
-        
-        // homepage.navigateToRegisterPage();
-
-        // logger("Step 3: Verify registration page is displayed");
-        // sa.assertTrue(registerpage.isRegisterPageNavigationSucceded(),
-        //         " register page navigation failed");
-
-        
-    }
-    
- 
-  
-    @Test(description = "UserOnBoardFlow", dataProvider = "userDataForTestCase01", dataProviderClass = testCase_01.class,priority = 1,groups={"Login Flow"},enabled=true)
-    public void TestCase01(String userName, String password) {
-        sa = new SoftAssert();
-       
-
-        String confirmPassword = password;
-
-        logger("Step 1: Check visibility of register button on home page");
-
-        sa.assertTrue(homepage.isRegisterButtonVisible(), "Register button not found");
-
-        logger("Step 2: Navigate to the register page");
-        
-        homepage.navigateToRegisterPage();
-
-        logger("Step 3: Verify registration page is displayed");
-        sa.assertTrue(registerpage.isRegisterPageNavigationSucceded(),
-                " register page navigation failed");
-             
-
-        logger("Step 4: Register new user");
-        registerpage.onBOardNewUser(userName, password, confirmPassword, true);
-     
-        logger("Step 5: Verify user is on login page");
-        loginpage.isLoginPageNavigationSucceded();
-       
-
-        logger("Step 6: Login with latest user");
-        loginpage.performLogin(userName, password, true);
-      
-
-        logger("Step 7: Veify user is logged in or not");
-        sa.assertTrue(homepage.isLogOutButtonVisible(), "User is not logged in");
-
-     
-
-        logger("Step 8: Perform log out");
-        homepage.logoutUser();
-
-        sa.assertAll();
-    }
-    
-    @DataProvider(name= "userDataForTestCase01")
-    public Object[][] userDataForTestCase01() {
+    @BeforeMethod(alwaysRun = true)
+    public void config() {
         try {
-            DP dataProvider = new DP();
-            return dataProvider.dpMethod("TestCase01");
+            driver = BaseTest.driver;
+            homePage = new HomePage(driver);
+            registerPage = new RegisterPage(driver);
+            loginPage = new LoginPage(driver,registerPage);
+            softAssert = new SoftAssert();
+            logPass("✅ WebDriver initialized successfully for testCase_01.");
         } catch (Exception e) {
-            System.out.println("Error in DataProvider: " + e.getMessage());
-            return new Object[][] {}; 
+            qtriptest.ExtendTestManager.logfail("❌ Failed to initialize driver: " + e.getMessage());
+            throw new RuntimeException("Driver initialization failed: " + e.getMessage());
         }
     }
-    @AfterMethod
-    public void teardown() {
-    DriverSingleton.unloadDriver(); 
-}
+
+    @Test(
+        priority = 1,
+        description = "Verify user onboarding, login, and logout flow on QTrip platform",
+        groups = { "Login Flow" },
+        dataProvider = "dpMethod",
+        dataProviderClass = DP.class,
+        enabled = true
+    )
+    public void TestCase01(String email, String password) throws InterruptedException {
+        try {
+            ExtendTestManager.logInfo("STEP 1️⃣: Navigating to Home Page");
+            Assert.assertTrue(homePage.isRegisterButtonVisible(), "Register button not visible on home page");
+            ExtendTestManager.logPass("Register button is visible on the Home Page.");
+            homePage.navigateToRegisterPage();
+            Assert.assertTrue(registerPage.isRegisterPageNavigationSucceded(), "Register Page navigation failed");
+
+
+            String uniqueEmail = email.split("@")[0] + "+" + System.currentTimeMillis() + "@" + email.split("@")[1];
+            logPass("Generated unique email: " + uniqueEmail);
+
+            ExtendTestManager.logInfo("STEP 4️⃣: Registering a new user");
+            registerPage.onBOardNewUser(uniqueEmail, password, password);
+            ExtendTestManager.logPass("User registration successful with email: " + uniqueEmail);
+
+            Assert.assertTrue(loginPage.isLoginPageNavigationSucceded(), "Login Page navigation failed");
+           
+            ExtendTestManager.logInfo("STEP 6️⃣: Logging in with registered user credentials");
+            loginPage.performLogin(uniqueEmail, password,false);
+            ExtendTestManager.logPass("Login attempt made successfully.");
+
+         
+            Assert.assertTrue(homePage.isLogOutButtonVisible(), "Login failed — Logout button not visible");
+          
+            ExtendTestManager.logInfo("STEP 8️⃣: Logging out user");
+            homePage.logoutUser();
+
+            Assert.assertTrue(homePage.isRegisterButtonVisible(), "Logout failed — Register button not visible");
+            ExtendTestManager.logPass("Logout successful. Register button visible again.");
+           
+
+        } catch (AssertionError e) {
+            logPass("❌ Assertion failed: " + e.getMessage());
+            ExtendTestManager.logfail("❌ Failed to initialize driver: " + e.getMessage());
+            Assert.fail(e.getMessage());
+        } catch (Exception e) {
+            logPass("❌ Exception occurred: " + e.getMessage());
+            Assert.fail("TestCase01 failed due to exception: " + e.getMessage());
+        }
+    }
 }

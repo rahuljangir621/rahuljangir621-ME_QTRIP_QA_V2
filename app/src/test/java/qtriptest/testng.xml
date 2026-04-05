@@ -1,10 +1,18 @@
-<suite name="QTrip Suite">
-  <test name="All Tests">
-    <classes>
-      <class name="qtriptest.tests.testCase_01"/>
-      <class name="qtriptest.tests.testCase_02"/>
-      <class name="qtriptest.tests.testCase_03"/>
-      <class name="qtriptest.tests.testCase_04"/>
-    </classes>
-  </test>
-</suite>
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+  <configuration>
+    <!-- Document title shown in browser tab -->
+    <documentTitle>QTrip Regression Suite</documentTitle>
+
+    <!-- Top-left title inside the report -->
+    <reportName>Regression test for QTrip</reportName>
+
+    <!-- Theme: STANDARD or DARK -->
+    <theme>STANDARD</theme>
+
+    <!-- Optional extras -->
+    <encoding>UTF-8</encoding>
+    <protocol>HTTPS</protocol>
+    <timelineEnabled>true</timelineEnabled>
+  </configuration>
+</extentreports>

@@ -1,144 +1,131 @@
 package qtriptest.tests;
 
 import qtriptest.DP;
-import qtriptest.DriverSingleton;
+import qtriptest.ExtendTestManager;
 import qtriptest.pages.AdventureDetailsPage;
 import qtriptest.pages.AdventurePage;
 import qtriptest.pages.HistoryPage;
 import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
+import qtriptest.utils.SeleniumUtils;
+import static qtriptest.utils.SeleniumUtils.logPass;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.annotations.Test.*;
 import org.testng.asserts.SoftAssert;
-import static qtriptest.utils.SeleniumUtils.*;
 
-public class testCase_03 {
+public class testCase_03 extends BaseTest {
 
-    RemoteWebDriver driver;
-    HomePage homepage;
-    RegisterPage registerpage;
-    LoginPage loginpage;
+    RegisterPage registerPage;
+    LoginPage loginPage;
+    HomePage homePage;
     AdventurePage adventurePage;
     AdventureDetailsPage adventureDetailsPage;
-    HistoryPage   historyPage;
-    SoftAssert sa;
-    String passwrd = "Rahu@123";
-    String username = "s@email.com";
+    SoftAssert softAssert;
+    HistoryPage historyPage;
 
-    @BeforeClass
-    public void config() throws MalformedURLException {
-
-        driver = DriverSingleton.getDriver();
-        DriverSingleton.openApp("https://qtrip-qa-web.labs.crio.do/");
-
-        homepage = new HomePage(driver);
-        registerpage = new RegisterPage(driver);
-        loginpage = new LoginPage(driver, registerpage);
+    @BeforeMethod(alwaysRun = true)
+    public void setup() {
+        driver = BaseTest.driver;
+        homePage = new HomePage(driver);
+        registerPage = new RegisterPage(driver);
         adventurePage = new AdventurePage(driver);
+        loginPage = new LoginPage(driver,registerPage);
         adventureDetailsPage = new AdventureDetailsPage(driver);
-        historyPage = new HistoryPage(driver);
-        
+         historyPage = new HistoryPage(driver);
+        softAssert = new SoftAssert();
+
+        SeleniumUtils.logPass("✅ Initialized all page objects for TestCase_03");
+        ExtendTestManager.logInfo("✅ Initialized all page objects for TestCase_03");
     }
-  
-    @Test(description = "UserOnBoardFlow", dataProvider = "userDataForTestCase03",groups = "booking a rides", dataProviderClass = testCase_03.class,priority = 1,enabled=true)
-    public void TestCase03(String userName, String password,String search_items,String adventure,String gustname,String date,String count) {
-    sa = new SoftAssert();
-       
-    String confirmPassword = password;
 
-    logger("Step 1: Check visibility of register button on home page");
+    @Test(
+        priority = 3,
+        description = "Verify adventure booking and cancellation flow",
+        groups = { "Booking and Cancellation Flow" },
+        dataProvider = "dpMethod",
+        dataProviderClass = DP.class,
+        enabled = true
+    )
+    public void TestCase03(
+        String NewUserName,
+        String Password,
+        String SearchCity,
+        String AdventureName,
+        String GuestName,
+        String Date,
+        String count
+    ) {
+        try {
+            ExtendTestManager.logInfo("STEP-1️⃣: Navigate to QTrip Home Page");
+            Assert.assertTrue(homePage.isRegisterButtonVisible(), "Register button not visible on home page");
+            ExtendTestManager.logPass("✅ Home Page loaded successfully");
 
-    sa.assertTrue(homepage.isRegisterButtonVisible(), "Register button not found");
+          
+            homePage.navigateToRegisterPage();
 
-    logger("Step 2: Navigate to the register page");
-    homepage.navigateToRegisterPage();
+            ExtendTestManager.logInfo("STEP 3️⃣: Verifying Register Page");
+            Assert.assertTrue(registerPage.isRegisterPageNavigationSucceded(), "Register Page navigation failed");
+            ExtendTestManager.logPass("Successfully navigated to Register Page.");
 
-    logger("Step 3: Verify registration page is displayed");
-    sa.assertTrue(registerpage.isRegisterPageNavigationSucceded(),
-            " register page navigation failed");
-         
+            // ✅ Step 4: Make email unique while keeping Excel as base
+            String uniqueEmail = NewUserName.split("@")[0] + "+" + System.currentTimeMillis() + "@" + NewUserName.split("@")[1];
+            logPass("Generated unique email: " + NewUserName);
 
-    logger("Step 4: Register new user");
-    registerpage.onBOardNewUser(userName, password, confirmPassword, true);
- 
-    logger("Step 5: Verify user is on login page");
-    loginpage.isLoginPageNavigationSucceded();
-   
-
-    logger("Step 6: Login with latest user");
-    loginpage.performLogin(userName, password, true);
-  
-
-    logger("Step 7: Veify user is logged in or not");
-    sa.assertTrue(homepage.isLogOutButtonVisible(), "User is not logged in");  
+            ExtendTestManager.logInfo("STEP 4️⃣: Registering a new user");
+            registerPage.onBOardNewUser(uniqueEmail, Password, Password);
+            ExtendTestManager.logPass("User registration successful with email: " + NewUserName);
     
-    homepage.searchCityResult(search_items);
-    logger("verify that if search valid place suggestion should show");
-    sa.assertTrue(homepage.searchCityResult(search_items).contains(search_items), " if search valid place suggestion not showing");
+            Assert.assertTrue(loginPage.isLoginPageNavigationSucceded(), "Login Page navigation failed");
+           
+           ExtendTestManager.logInfo("STEP 6️⃣: Logging in with registered user credentials");
+            loginPage.performLogin(uniqueEmail, Password,false);
+            ExtendTestManager.logPass("Login attempt made successfully.");
 
-    logger("clicking on suggestion city");
-    homepage.selectSearchCityAndNavigate();
 
-    logger("clicking on advanture place");
-    adventurePage.selectAdventure(adventure);   
+            String result = homePage.searchCityResult(SearchCity);
+            softAssert.assertEquals(result, SearchCity, "City search mismatch");
+            homePage.selectSearchCityAndNavigate();
+            boolean status = adventurePage.verfiy_navigate_to_currect_city(SearchCity);
+            softAssert.assertTrue(status, "Incorrect city navigation");
+            ExtendTestManager.logPass("✅ Navigated to " + SearchCity + " successfully");
 
-    logger("entering gustname and time and date for booking");
-    adventureDetailsPage.enterNameAndDateValue(gustname,date);
+            ExtendTestManager.logInfo("STEP-4️⃣: Search and select adventure");
+            adventurePage.selectAdventure(AdventureName);
+            softAssert.assertEquals(adventureDetailsPage.verfiy_navigate_to_adv_name(), AdventureName.toLowerCase(), "Adventure name mismatch");
 
-    logger("entering pecenger count for booking");
-    adventureDetailsPage.enterPersonCount(count);
+            ExtendTestManager.logPass("✅ Selected adventure: " + AdventureName);
 
-    logger("clicking on confirm booking buttn");
-    try {
-        adventureDetailsPage.doReservation();
-    } catch (InterruptedException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-        System.out.println(e);
+            ExtendTestManager.logInfo("STEP-5️⃣: Verify details page and book adventure");
+            adventureDetailsPage.enterNameAndDateValue(GuestName, Date);
+            adventureDetailsPage.enterPersonCount(count);
+            adventureDetailsPage.doReservation();
+
+            softAssert.assertTrue(adventureDetailsPage.checkForSuccessfullReservation(), "Booking failed");
+            ExtendTestManager.logPass("✅ Adventure booked successfully for guest: " + GuestName);
+
+            ExtendTestManager.logInfo("STEP-6️⃣: Cancel booking from history page");
+            adventureDetailsPage.navigateToReservationHistoryPage();
+            status =  historyPage.checkTrackIDandCancel();
+
+            softAssert.assertTrue(status, "Booking cancellation failed");
+            ExtendTestManager.logPass("✅ Booking cancelled successfully");
+
+            ExtendTestManager.logInfo("STEP-7️⃣: Logout after completion");
+            historyPage.clickOnLogoutButton();
+            softAssert.assertTrue(homePage.isRegisterButtonVisible(), "Logout failed");
+            ExtendTestManager.logPass("✅ Logout successful");
+
+            softAssert.assertAll();
+            ExtendTestManager.logPass("🎯 TestCase03 passed successfully");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            SeleniumUtils.logPass("❌ TestCase03 failed due to exception: " + e.getMessage());
+            ExtendTestManager.logfail("❌ TestCase03 failed due to: " + e.getMessage());
+            softAssert.fail("Test failed due to exception: " + e.getMessage());
+            softAssert.assertAll();
+        }
     }
-    logger("verifying that Reservation is booked successfully");
-    sa.assertTrue(adventureDetailsPage.checkForSuccessfullReservation(), "adventure booking is not booked");
-
-
-    logger("navigate on history page");
-    adventureDetailsPage.navigateToReservationHistoryPage();
-
-    logger("verifying tranction number and verfiying resversion is canceled successfully");
-    historyPage.checkTrackIDandCancel();
-    sa.assertTrue( historyPage.checkTrackIDandCancel(),"verfiying resversion is not canceled successfully");
-
-    logger("perfom logout opration");
-    historyPage.clickOnLogoutButton();
-
-    sa.assertAll();
-}
-
-@DataProvider(name= "userDataForTestCase03")
-public Object[][] userDataForTestCase03() throws IOException {
-    try{
-    DP dataProvider = new DP();
-    Object[][] data = dataProvider.dpMethod("TestCase03");
-    return data;
-    }catch (Exception e){
-        System.out.println("err"+e);
-        return null;
-    }
-}
-
-
-@AfterClass
-public void teardown() {
-    DriverSingleton.unloadDriver(); 
-}
 }
