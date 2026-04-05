@@ -62,7 +62,7 @@ public class testCase_01 extends BaseTest {
               Assert.assertTrue(loginPage.isLoginPageNavigationSucceded(), "Login Page navigation failed");
            
               ExtendTestManager.logInfo("STEP 6️⃣: Logging in with registered user credentials");
-            loginPage.performLogin(uniqueEmail, password,false);
+             loginPage.performLogin(uniqueEmail, password,false);
           
             
            softAssert.assertTrue(uniqueEmail.toLowerCase().contains(email.toLowerCase().split("@")[0]),
