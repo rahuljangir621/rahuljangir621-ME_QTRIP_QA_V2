@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
     import org.testng.annotations.*;
     import java.io.IOException;
     import java.lang.reflect.Method;
-    
+
     
     public class BaseTest {
     
@@ -31,8 +31,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
             logPass("🚀 Application launched: " + APP_URL);
         }
     
-        @BeforeMethod(alwaysRun = true)
-        public void beforeEachTestMethod(Method method) {
+         @BeforeMethod(alwaysRun = true)
+         public void beforeEachTestMethod(Method method) {
             ExtendTestManager.startTest(method.getName());
         }
     
