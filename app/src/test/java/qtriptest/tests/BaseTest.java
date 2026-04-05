@@ -14,6 +14,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
     
     public class BaseTest {
     
+         
+        
         protected static RemoteWebDriver driver;
         String browser = "chrome";
         String APP_URL = "https://qtrip-qa-web.labs.crio.do/";
