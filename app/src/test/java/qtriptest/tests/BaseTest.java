@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
     import java.io.IOException;
     import java.lang.reflect.Method;
     
+    
     public class BaseTest {
     
          
@@ -21,7 +22,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
         String APP_URL = "https://qtrip-qa-web.labs.crio.do/";
     
 
-        
+
         @BeforeSuite(alwaysRun = true)
         public void initTestSuite() throws Exception {
             driver = DriverSingleton.getDriver(browser);
