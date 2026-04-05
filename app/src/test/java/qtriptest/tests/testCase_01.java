@@ -63,7 +63,9 @@ public class testCase_01 extends BaseTest {
            
             ExtendTestManager.logInfo("STEP 6️⃣: Logging in with registered user credentials");
             loginPage.performLogin(uniqueEmail, password,false);
-            ExtendTestManager.logPass("Login attempt made successfully.");
+            softAssert.assertTrue(uniqueEmail.contains(uniqueEmail), "Email mismatch");
+            softAssert.assertTrue(password.equals(password), "Password mismatch");
+         
 
          
             Assert.assertTrue(homePage.isLogOutButtonVisible(), "Login failed — Logout button not visible");
@@ -73,6 +75,7 @@ public class testCase_01 extends BaseTest {
 
             Assert.assertTrue(homePage.isRegisterButtonVisible(), "Logout failed — Register button not visible");
             ExtendTestManager.logPass("Logout successful. Register button visible again.");
+            softAssert.assertAll();
            
 
         } catch (AssertionError e) {

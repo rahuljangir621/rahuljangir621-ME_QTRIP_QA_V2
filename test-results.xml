@@ -2,7 +2,7 @@
 <testng-results ignored="8" total="20" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-05T14:33:40 IST" name="Gradle suite" finished-at="2026-04-05T14:36:57 IST" duration-ms="196954">
+  <suite started-at="2026-04-05T15:34:08 IST" name="Gradle suite" finished-at="2026-04-05T15:37:25 IST" duration-ms="197484">
     <groups>
       <group name="Booking and Cancellation Flow">
         <method signature="testCase_03.TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@37d4349f]" name="TestCase03" class="qtriptest.tests.testCase_03"/>
@@ -17,9 +17,9 @@
         <method signature="testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@209da20d]" name="TestCase01" class="qtriptest.tests.testCase_01"/>
       </group> <!-- Login Flow -->
     </groups>
-    <test started-at="2026-04-05T14:33:40 IST" name="Gradle test" finished-at="2026-04-05T14:36:57 IST" duration-ms="196954">
+    <test started-at="2026-04-05T15:34:08 IST" name="Gradle test" finished-at="2026-04-05T15:37:25 IST" duration-ms="197484">
       <class name="qtriptest.tests.testCase_01">
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:33:43 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:33:43 IST" duration-ms="157" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:11 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:34:11 IST" duration-ms="129" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,11 +30,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:33:43 IST" name="config" finished-at="2026-04-05T14:33:43 IST" duration-ms="46" status="PASS">
+        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:11 IST" name="config" finished-at="2026-04-05T15:34:11 IST" duration-ms="45" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:33:43 IST" name="TestCase01" description="Verify user onboarding, login, and logout flow on QTrip platform" data-provider="dpMethod" finished-at="2026-04-05T14:33:51 IST" duration-ms="8549" status="PASS">
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:11 IST" name="TestCase01" description="Verify user onboarding, login, and logout flow on QTrip platform" data-provider="dpMethod" finished-at="2026-04-05T15:34:20 IST" duration-ms="8705" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,7 +50,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:33:51 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:33:51 IST" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:20 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:34:20 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -61,7 +61,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:33:51 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:33:51 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:20 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:34:20 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -72,11 +72,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:33:51 IST" name="config" finished-at="2026-04-05T14:33:51 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:20 IST" name="config" finished-at="2026-04-05T15:34:20 IST" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:33:51 IST" name="TestCase01" description="Verify user onboarding, login, and logout flow on QTrip platform" data-provider="dpMethod" finished-at="2026-04-05T14:34:00 IST" duration-ms="8132" status="PASS">
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:20 IST" name="TestCase01" description="Verify user onboarding, login, and logout flow on QTrip platform" data-provider="dpMethod" finished-at="2026-04-05T15:34:28 IST" duration-ms="8075" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -92,7 +92,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:34:00 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:34:00 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:28 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:34:28 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -103,7 +103,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:34:00 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:34:00 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:28 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:34:28 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -114,11 +114,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:34:00 IST" name="config" finished-at="2026-04-05T14:34:00 IST" duration-ms="22" status="PASS">
+        <test-method is-config="true" signature="config()[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:28 IST" name="config" finished-at="2026-04-05T15:34:28 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- config -->
-        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:34:00 IST" name="TestCase01" description="Verify user onboarding, login, and logout flow on QTrip platform" data-provider="dpMethod" finished-at="2026-04-05T14:34:08 IST" duration-ms="7983" status="PASS">
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:28 IST" name="TestCase01" description="Verify user onboarding, login, and logout flow on QTrip platform" data-provider="dpMethod" finished-at="2026-04-05T15:34:36 IST" duration-ms="7834" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -134,7 +134,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase01 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T14:34:08 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:34:08 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_01@209da20d]" started-at="2026-04-05T15:34:36 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:34:36 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -147,17 +147,17 @@
         </test-method> <!-- afterEachTestMethod -->
       </class> <!-- qtriptest.tests.testCase_01 -->
       <class name="qtriptest.tests.BaseTest">
-        <test-method is-config="true" signature="initTestSuite()[pri:0, instance:qtriptest.tests.BaseTest@25fb8912]" started-at="2026-04-05T14:33:36 IST" name="initTestSuite" finished-at="2026-04-05T14:33:40 IST" duration-ms="3487" status="PASS">
+        <test-method is-config="true" signature="initTestSuite()[pri:0, instance:qtriptest.tests.BaseTest@25fb8912]" started-at="2026-04-05T15:34:05 IST" name="initTestSuite" finished-at="2026-04-05T15:34:08 IST" duration-ms="2601" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initTestSuite -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:qtriptest.tests.BaseTest@25fb8912]" started-at="2026-04-05T14:36:57 IST" name="tearDownSuite" finished-at="2026-04-05T14:36:57 IST" duration-ms="822" status="PASS">
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:qtriptest.tests.BaseTest@25fb8912]" started-at="2026-04-05T15:37:25 IST" name="tearDownSuite" finished-at="2026-04-05T15:37:26 IST" duration-ms="879" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSuite -->
       </class> <!-- qtriptest.tests.BaseTest -->
       <class name="qtriptest.tests.testCase_04">
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:35:21 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:35:21 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:35:50 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:35:50 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -168,11 +168,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:35:21 IST" name="setup" finished-at="2026-04-05T14:35:21 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:35:50 IST" name="setup" finished-at="2026-04-05T15:35:50 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:35:21 IST" name="TestCase04" description="Verify multiple bookings across cities and reservation history" data-provider="dpMethod" finished-at="2026-04-05T14:35:53 IST" duration-ms="32444" status="PASS">
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:35:50 IST" name="TestCase04" description="Verify multiple bookings across cities and reservation history" data-provider="dpMethod" finished-at="2026-04-05T15:36:22 IST" duration-ms="31970" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -203,7 +203,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:35:53 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:35:53 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:22 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:36:22 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -214,7 +214,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:35:53 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:35:53 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:22 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:36:22 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -225,11 +225,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:35:53 IST" name="setup" finished-at="2026-04-05T14:35:53 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:22 IST" name="setup" finished-at="2026-04-05T15:36:22 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:35:53 IST" name="TestCase04" description="Verify multiple bookings across cities and reservation history" data-provider="dpMethod" finished-at="2026-04-05T14:36:25 IST" duration-ms="32076" status="PASS">
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:22 IST" name="TestCase04" description="Verify multiple bookings across cities and reservation history" data-provider="dpMethod" finished-at="2026-04-05T15:36:54 IST" duration-ms="31817" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -260,7 +260,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:36:25 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:36:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:54 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:36:54 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -271,7 +271,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:36:25 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:36:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:54 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:36:54 IST" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -282,11 +282,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:36:25 IST" name="setup" finished-at="2026-04-05T14:36:25 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:54 IST" name="setup" finished-at="2026-04-05T15:36:54 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:36:25 IST" name="TestCase04" description="Verify multiple bookings across cities and reservation history" data-provider="dpMethod" finished-at="2026-04-05T14:36:57 IST" duration-ms="31507" status="PASS">
+        <test-method signature="TestCase04(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:36:54 IST" name="TestCase04" description="Verify multiple bookings across cities and reservation history" data-provider="dpMethod" finished-at="2026-04-05T15:37:25 IST" duration-ms="31205" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -317,7 +317,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase04 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T14:36:57 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:36:57 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_04@6e0f5f7f]" started-at="2026-04-05T15:37:25 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:37:25 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -330,7 +330,7 @@
         </test-method> <!-- afterEachTestMethod -->
       </class> <!-- qtriptest.tests.testCase_04 -->
       <class name="qtriptest.tests.testCase_03">
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:34:33 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:34:33 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:02 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:35:02 IST" duration-ms="16" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -341,11 +341,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:34:33 IST" name="setup" finished-at="2026-04-05T14:34:33 IST" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:02 IST" name="setup" finished-at="2026-04-05T15:35:02 IST" duration-ms="25" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:34:33 IST" name="TestCase03" description="Verify adventure booking and cancellation flow" data-provider="dpMethod" finished-at="2026-04-05T14:34:49 IST" duration-ms="15505" status="PASS">
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:02 IST" name="TestCase03" description="Verify adventure booking and cancellation flow" data-provider="dpMethod" finished-at="2026-04-05T15:35:19 IST" duration-ms="16668" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -386,7 +386,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:34:49 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:34:49 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:19 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:35:19 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -397,7 +397,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:34:49 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:34:49 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:19 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:35:19 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -408,11 +408,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:34:49 IST" name="setup" finished-at="2026-04-05T14:34:49 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:19 IST" name="setup" finished-at="2026-04-05T15:35:19 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:34:49 IST" name="TestCase03" description="Verify adventure booking and cancellation flow" data-provider="dpMethod" finished-at="2026-04-05T14:35:05 IST" duration-ms="15717" status="PASS">
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:19 IST" name="TestCase03" description="Verify adventure booking and cancellation flow" data-provider="dpMethod" finished-at="2026-04-05T15:35:34 IST" duration-ms="15667" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -453,7 +453,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:35:05 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:35:05 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:34 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:35:34 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -464,7 +464,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:35:05 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:35:05 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:34 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:35:34 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -475,11 +475,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:35:05 IST" name="setup" finished-at="2026-04-05T14:35:05 IST" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:34 IST" name="setup" finished-at="2026-04-05T15:35:34 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:35:05 IST" name="TestCase03" description="Verify adventure booking and cancellation flow" data-provider="dpMethod" finished-at="2026-04-05T14:35:20 IST" duration-ms="15560" status="PASS">
+        <test-method signature="TestCase03(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:34 IST" name="TestCase03" description="Verify adventure booking and cancellation flow" data-provider="dpMethod" finished-at="2026-04-05T15:35:50 IST" duration-ms="15695" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -520,7 +520,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase03 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T14:35:20 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:35:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_03@37d4349f]" started-at="2026-04-05T15:35:50 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:35:50 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -533,7 +533,7 @@
         </test-method> <!-- afterEachTestMethod -->
       </class> <!-- qtriptest.tests.testCase_03 -->
       <class name="qtriptest.tests.testCase_02">
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:08 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:34:08 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:36 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:34:36 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -544,11 +544,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:08 IST" name="setup" finished-at="2026-04-05T14:34:08 IST" duration-ms="17" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:36 IST" name="setup" finished-at="2026-04-05T15:34:36 IST" duration-ms="21" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:08 IST" name="TestCase02" description="Verify search and filter functionalities on Adventure page" data-provider="dpMethod" finished-at="2026-04-05T14:34:17 IST" duration-ms="8600" status="PASS">
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:36 IST" name="TestCase02" description="Verify search and filter functionalities on Adventure page" data-provider="dpMethod" finished-at="2026-04-05T15:34:45 IST" duration-ms="8567" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -579,7 +579,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:17 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:34:17 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:45 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:34:45 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -590,7 +590,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:17 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:34:17 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:45 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:34:45 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -601,11 +601,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:17 IST" name="setup" finished-at="2026-04-05T14:34:17 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:45 IST" name="setup" finished-at="2026-04-05T15:34:45 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:17 IST" name="TestCase02" description="Verify search and filter functionalities on Adventure page" data-provider="dpMethod" finished-at="2026-04-05T14:34:25 IST" duration-ms="8210" status="PASS">
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:45 IST" name="TestCase02" description="Verify search and filter functionalities on Adventure page" data-provider="dpMethod" finished-at="2026-04-05T15:34:53 IST" duration-ms="8166" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -636,7 +636,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:25 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:34:25 IST" duration-ms="25" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:53 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:34:53 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -647,7 +647,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTestMethod -->
-        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:25 IST" name="beforeEachTestMethod" finished-at="2026-04-05T14:34:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeEachTestMethod(java.lang.reflect.Method)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:53 IST" name="beforeEachTestMethod" finished-at="2026-04-05T15:34:53 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -658,11 +658,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:25 IST" name="setup" finished-at="2026-04-05T14:34:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:53 IST" name="setup" finished-at="2026-04-05T15:34:53 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:25 IST" name="TestCase02" description="Verify search and filter functionalities on Adventure page" data-provider="dpMethod" finished-at="2026-04-05T14:34:33 IST" duration-ms="8358" status="PASS">
+        <test-method signature="TestCase02(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:34:53 IST" name="TestCase02" description="Verify search and filter functionalities on Adventure page" data-provider="dpMethod" finished-at="2026-04-05T15:35:01 IST" duration-ms="8467" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -693,7 +693,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase02 -->
-        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T14:34:33 IST" name="afterEachTestMethod" finished-at="2026-04-05T14:34:33 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterEachTestMethod(org.testng.ITestResult)[pri:0, instance:qtriptest.tests.testCase_02@57cf54e1]" started-at="2026-04-05T15:35:01 IST" name="afterEachTestMethod" finished-at="2026-04-05T15:35:01 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
