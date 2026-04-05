@@ -133,7 +133,7 @@ public class testCase_04 extends BaseTest {
             homePage.navigateToHomePage();
             String result = homePage.searchCityResult(city);
           
-            softAssert.assertTrue(result.contains(city),  "City search mismatch");
+            softAssert.assertTrue(result.contains(city),  "City  search mismatch");
             homePage.selectSearchCityAndNavigate();
             boolean status = adventurePage.verfiy_navigate_to_currect_city(city);
             
