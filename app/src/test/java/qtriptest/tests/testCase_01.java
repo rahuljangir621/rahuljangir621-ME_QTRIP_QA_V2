@@ -59,9 +59,9 @@ public class testCase_01 extends BaseTest {
             registerPage.onBOardNewUser(uniqueEmail, password, password);
             ExtendTestManager.logPass("User registration successful with email: " + uniqueEmail);
 
-            Assert.assertTrue(loginPage.isLoginPageNavigationSucceded(), "Login Page navigation failed");
+              Assert.assertTrue(loginPage.isLoginPageNavigationSucceded(), "Login Page navigation failed");
            
-            ExtendTestManager.logInfo("STEP 6️⃣: Logging in with registered user credentials");
+              ExtendTestManager.logInfo("STEP 6️⃣: Logging in with registered user credentials");
             loginPage.performLogin(uniqueEmail, password,false);
             softAssert.assertTrue(uniqueEmail.contains(uniqueEmail), "Email mismatch");
             softAssert.assertTrue(password.equals(password), "Password mismatch");
